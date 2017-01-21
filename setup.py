@@ -1,18 +1,17 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='files_by_date',
+    name='files-by-daae',
     packages=find_packages(),
     version='0.1',
-    description='This program takes an input directory and outputs the files contained within that directory into '
-                'subdirectories in [YYYYMM] format based upon the file create date.',
+    description='Moves files from one directory into another grouping by created month',
     author='Justin Beall',
     author_email='jus.beall@gmail.com',
-    url='https://github.com/DEV3L/python-package-archetype',
+    url='https://github.com/DEV3L/python-files-by-date',
     download_url='https://github.com/DEV3L/python-files-by-date/tarball/0.1',
-    keywords=['dev3l', 'files by date', 'sort directory'],  # arbitrary keywords
+    keywords=['dev3l', 'file management'],  # arbitrary keywords
     install_requires=[
-        'pytest'
+        'pytest==2.9.2'
     ],
     classifiers=[
         'Environment :: Console',
@@ -25,6 +24,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'],
     entry_points={
         'console_scripts': [
-            'files_by_date = files_by_date.main'
+            'files-by-date = run'
         ]},
 )
