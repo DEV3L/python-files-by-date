@@ -1,6 +1,6 @@
 # python-pictures-by-date
 
-Python program used to sort files from one directory to another.
+A Python program that takes files within an input directory and copies them to an output directory into subdirectories in [YYYYMM] format based upon the file create date.
 
 ## Installation
 
