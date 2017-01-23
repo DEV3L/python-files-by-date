@@ -11,3 +11,8 @@ class ArgumentValidator:
     def validate_target_dir(path):
         if not os.access(os.path.dirname(path), os.W_OK):
             raise AssertionError(f'Invalid target directory: {path}')
+
+    @staticmethod
+    def validate_arguments(arguments):
+        ArgumentValidator.validate_input_dir(arguments.input_dir)
+        ArgumentValidator.validate_target_dir(arguments.target_dir)
