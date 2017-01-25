@@ -1,3 +1,5 @@
+resources/output_dir
+
 # PyCharm
 .idea
 
@@ -90,3 +92,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.DS_Store
