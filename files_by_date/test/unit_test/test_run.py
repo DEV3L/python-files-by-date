@@ -13,8 +13,8 @@ class TestRun(TestCase):
 
 
 @patch('files_by_date.validators.argument_validator.ArgumentValidator')
-def test_run(ArgumentValidator):
-    ArgumentValidator.validate_arguments = lambda x: True
+def test_run(argument_validator):
+    argument_validator.validate_arguments = lambda x: True
     run(args='input_dir target_dir'.split())
 
     # ArgumentValidator.validate_arguments = lambda x: raise_error(AssertionError())
