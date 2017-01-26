@@ -1,4 +1,4 @@
-resources/output_dir
+resources/target_dir
 
 # PyCharm
 .idea

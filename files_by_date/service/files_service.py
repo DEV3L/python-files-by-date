@@ -1,6 +1,9 @@
 import datetime
 import os
+import shutil
 import time
+
+from files_by_date.validators.argument_validator import ArgumentValidator
 
 
 class FilesService:
@@ -31,6 +34,25 @@ class FilesService:
             grouped_files[directory_tag] = file_group
 
         return grouped_files
+
+    @classmethod
+    def copy_files(cls, file_groups, target_dir):
+        if not os.path.exists(target_dir):
+            os.makedirs(target_dir)
+
+        for group in file_groups:
+            # group_dir = f'{target_dir}{os.sep}{group}' # 3.6
+            group_dir = '{target_dir}{os_sep}{group}'.format(target_dir=target_dir, os_sep=os.sep, group=group)
+            ArgumentValidator.validate_target_dir(group_dir)
+
+            if not os.path.exists(group_dir):
+                os.makedirs(group_dir)
+
+            for file in file_groups[group]:
+                # file_path = f'{group_dir}{os.path.basename(file)}' # 3.6
+                file_path = '{group_dir}{os.path.basename(file)}'
+                if not os.path.exists(file_path):
+                    shutil.copy2(file, group_dir)
 
     @staticmethod
     def _get_directory_tag_for_file(file):
