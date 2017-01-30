@@ -17,5 +17,6 @@ def test_group_files_by_modified_date():
 def test_copy_files():
     files = FilesService.gather_files(RESOURCES_INPUT_DIR, list())
     grouped_files = FilesService.group_files_by_modified_date(files)
-    FilesService.copy_files(grouped_files, RESOURCES_OUTPUT_DIR)
+    FilesService.copy_files(grouped_files, RESOURCES_OUTPUT_DIR, False)
+    FilesService.copy_files(grouped_files, RESOURCES_OUTPUT_DIR, True)
     # need better tests
