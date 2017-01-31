@@ -41,16 +41,12 @@ class FilesService:
     @classmethod
     def copy_files(cls, file_groups, target_dir, force_overwrite):
         if not os.path.exists(target_dir):
-            os.makedirs(target_dir)
+            os.makedirs(target_dir)  # TODO: not covered
 
-        # data type needed
-        total_files_count = 0
-        total_copied_count = 0
-        total_skipped_count = 0
+        total_count = Count()
 
         for group in file_groups:
-            local_copied_count = 0
-            local_skipped_count = 0
+            group_count = Count()
 
             # group_dir = f'{target_dir}{os.sep}{group}' # 3.6
             group_dir = '{target_dir}{os_sep}{group}'.format(target_dir=target_dir, os_sep=os.sep, group=group)
@@ -73,23 +69,40 @@ class FilesService:
 
                 if not os.path.exists(file_path):
                     shutil.copy2(file, group_dir)
-                    local_copied_count += 1
+                    group_count.add_copied(count=1)
                 else:
-                    local_skipped_count += 1
+                    group_count.add_skipped(count=1)  # TODO: not covered
 
-            total_files_count += len(file_groups[group])
-            total_copied_count += local_copied_count
-            total_skipped_count += local_skipped_count
+            total_count.add_files(count=len(file_groups[group]))
+            total_count.add_copied(count=group_count.copied)
+            total_count.add_skipped(count=group_count.skipped)
 
-            # log_message(f'Copied {local_copied_count}, skipped {local_skipped_count}') # 3.6
+            # log_message(f'Copied {group_count.copied}, skipped {group_count.skipped}') # 3.6
             log_message('Copied {local_copied_count}, skipped {local_skipped_count}'.format(
-                local_copied_count=local_copied_count, local_skipped_count=local_skipped_count))
+                local_copied_count=group_count.copied, local_skipped_count=group_count.skipped))
         log_message(
+            # f'Total files count {total_count.files}, total copied {total_count.copied}, total skipped {total_count.skipped}') # 3.6
             'Total files count {total_files_count}, total copied {total_copied_count}, total skipped {total_skipped_count}'.format(
-                total_files_count=total_files_count,
-                total_copied_count=total_copied_count,
-                total_skipped_count=total_skipped_count))
+                total_files_count=total_count.files,
+                total_copied_count=total_count.copied,
+                total_skipped_count=total_count.skipped))
 
     @staticmethod
     def _get_directory_tag_for_file(file):
         return datetime.datetime.strptime(time.ctime(os.path.getmtime(file)), "%a %b %d %H:%M:%S %Y").strftime('%Y%m')
+
+
+class Count:
+    def __init__(self):
+        self.files = 0
+        self.copied = 0
+        self.skipped = 0
+
+    def add_files(self, *, count=1):
+        self.files += count
+
+    def add_copied(self, *, count=0):
+        self.copied += count
+
+    def add_skipped(self, *, count=0):
+        self.skipped += count

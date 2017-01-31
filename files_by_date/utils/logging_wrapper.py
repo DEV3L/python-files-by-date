@@ -28,6 +28,5 @@ def get_logger(*, name=None, level=logging.DEBUG):
 def log_message(message):
     get_logger().info(message)
 
-
-def log_exception(message):
-    get_logger().exception(message)
+# def log_exception(message):
+#     get_logger().exception(message)

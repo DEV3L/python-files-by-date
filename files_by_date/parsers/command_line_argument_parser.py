@@ -19,6 +19,9 @@ class CommandLineArgumentParser:
     def parse(self, *, args=None):
         return self.argument_parser.parse_args(args=args)
 
+    def print_help(self):
+        self.argument_parser.print_help()
+
     def _add_arguments(self):
         parser = argparse.ArgumentParser(description='Process some integers.')
         self.argument_parser.add_argument("input_dir", type=str, help="input directory")
