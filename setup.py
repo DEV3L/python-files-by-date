@@ -19,25 +19,10 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3',
         'Topic :: Softwalre Development :: Libraries :: Python Modules'],
     entry_points={
         'console_scripts': [
             'files-by-date = run'
         ]},
 )
-
-
-# $ python
-# >>> import funniest.command_line
-# >>> funniest.command_line.main()
-# ...
-# The main() function can then be registered like so:
-#
-# setup(
-#     ...
-#     entry_points = {
-#         'console_scripts': ['funniest-joke=funniest.command_line:main'],
-#     }
-#     ...
-# )

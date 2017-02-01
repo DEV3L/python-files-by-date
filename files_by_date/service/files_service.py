@@ -86,6 +86,7 @@ class FilesService:
                 total_files_count=total_count.files,
                 total_copied_count=total_count.copied,
                 total_skipped_count=total_count.skipped))
+        return total_count
 
     @staticmethod
     def _get_directory_tag_for_file(file):
@@ -93,10 +94,15 @@ class FilesService:
 
 
 class Count:
-    def __init__(self):
-        self.files = 0
-        self.copied = 0
-        self.skipped = 0
+    def __init__(self, *, files=0, copied=0, skipped=0):
+        self.files = files
+        self.copied = copied
+        self.skipped = skipped
+
+    def __str__(self):
+        # return f'files={self.files}, copied={self.copied}, skipped={self.skipped}' # 3.6
+        return 'files={files}, copied={copied}, skipped={skipped}'.format(files=self.files, copied=self.copied,
+                                                                          skipped=self.skipped)
 
     def add_files(self, *, count=1):
         self.files += count
