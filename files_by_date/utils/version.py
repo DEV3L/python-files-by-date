@@ -16,5 +16,8 @@ def update_version():
 
 
 def get_version():
-    with open(FILE_NAME) as file:
-        return file.read()
+    try:
+        with open(FILE_NAME) as file:
+            return file.read()
+    except FileNotFoundError:
+        return '1.0.0'
