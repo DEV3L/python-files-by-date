@@ -10,7 +10,7 @@ setup(
     author='Justin Beall',
     author_email='jus.beall@gmail.com',
     url='https://github.com/DEV3L/python-files-by-date',
-    download_url='https://github.com/DEV3L/python-files-by-date/tarball/0.1',
+    download_url='https://github.com/DEV3L/python-files-by-date/tarball/{version}'.format(version=get_version()),
     keywords=['dev3l', 'file management'],  # arbitrary keywords
     install_requires=[
         'pytest==3.0.6',
