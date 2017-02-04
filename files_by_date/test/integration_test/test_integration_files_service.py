@@ -44,14 +44,9 @@ class TestIntegrationFilesService(TestCase):
             FilesService.copy_files(grouped_files, TestIntegrationFilesService.TEST_DIR, False))
 
 
-GROUPED_FILE_OUTPUT = \
-    {'201701':
-         ['.{os_sep}resources{os_sep}input_dir{os_sep}test_file.txt'.format(os_sep=os.sep),
-          '.{os_sep}resources{os_sep}input_dir{os_sep}test_dir{os_sep}test_file_2.txt'.format(
-              os_sep=os.sep),
-          '.{os_sep}resources{os_sep}input_dir{os_sep}test_dir{os_sep}test_dir_2{os_sep}test_file_3.txt'
-              .format(os_sep=os.sep),
-          '.{os_sep}resources{os_sep}input_dir{os_sep}test_dir{os_sep}test_dir_2{os_sep}test_file_4.txt'
-              .format(os_sep=os.sep)
-          ]
-     }
+GROUPED_FILE_OUTPUT = {'201702':
+                           ['.\\resources\\input_dir\\test_file.txt',
+                            '.\\resources\\input_dir\\test_dir\\test_file_2.txt',
+                            '.\\resources\\input_dir\\test_dir\\test_dir_2\\test_file_3.txt',
+                            '.\\resources\\input_dir\\test_dir\\test_dir_2\\test_file_4.txt'
+                            ]}
