@@ -45,8 +45,8 @@ class TestIntegrationFilesService(TestCase):
 
 
 GROUPED_FILE_OUTPUT = {'201702':
-                           ['.\\resources\\input_dir\\test_file.txt',
-                            '.\\resources\\input_dir\\test_dir\\test_file_2.txt',
-                            '.\\resources\\input_dir\\test_dir\\test_dir_2\\test_file_3.txt',
-                            '.\\resources\\input_dir\\test_dir\\test_dir_2\\test_file_4.txt'
+                           ['./resources/input_dir/test_file.txt',
+                            './resources/input_dir/test_dir/test_file_2.txt',
+                            './resources/input_dir/test_dir/test_dir_2/test_file_3.txt',
+                            './resources/input_dir/test_dir/test_dir_2/test_file_4.txt'
                             ]}
