@@ -7,7 +7,6 @@ from files_by_date.validators.argument_validator import ArgumentValidator
 
 @patch('files_by_date.validators.argument_validator.os')
 def test_validate_input_dir(os):
-    assert False
     os.path.exists = lambda x: True
     os.access = lambda x, y: True
     ArgumentValidator.validate_input_dir('test')
