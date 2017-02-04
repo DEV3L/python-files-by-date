@@ -1,14 +1,16 @@
 from setuptools import setup, find_packages
 
+from files_by_date.utils.version import get_version
+
 setup(
-    name='files-by-daae',
+    name='files-by-date',
     packages=find_packages(),
-    version='0.2',
+    version=get_version(),
     description='Moves files from one directory into another grouping by created month',
     author='Justin Beall',
     author_email='jus.beall@gmail.com',
     url='https://github.com/DEV3L/python-files-by-date',
-    download_url='https://github.com/DEV3L/python-files-by-date/tarball/0.2',
+    download_url='https://github.com/DEV3L/python-files-by-date/tarball/0.1',
     keywords=['dev3l', 'file management'],  # arbitrary keywords
     install_requires=[
         'pytest==3.0.6',
