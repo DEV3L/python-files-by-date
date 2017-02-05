@@ -1,3 +1,5 @@
+[![Build Status](^https://travis-ci.org/DEV3L/python-files-by-date.png^)](https://travis-ci.org/DEV3L/python-files-by-date)
+
 # python-files-by-date
 
 A Python program that takes files within an input directory and copies them to an output directory into subdirectories in [YYYYMM] format based upon the file create date.
