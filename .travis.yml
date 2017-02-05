@@ -6,5 +6,5 @@ install: pip install -r ./requirements.txt
 script:
   - coverage run --timid --source ./files_by_date/ -m py.test
   - coverage report
-  - pylint --rcfile=./._pylintrc ./files_by_date/
+  - pylint ./files_by_date/
   - bandit -r ./files_by_date/
