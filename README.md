@@ -1,4 +1,5 @@
 [![Build Status](^https://travis-ci.org/DEV3L/python-files-by-date.png^)](https://travis-ci.org/DEV3L/python-files-by-date)
+[![Coverage Status](https://coveralls.io/repos/github/DEV3L/python-files-by-date/badge.svg)](https://coveralls.io/github/DEV3L/python-files-by-date)
 
 # python-files-by-date
 
