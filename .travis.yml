@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.6"
+install: "python setup.py develop"
+
+script:
+  - coverage run --timid --source ./files_by_date/ -m py.test
+  - coverage report
+  - pylint --rcfile=./._pylintrc ./files_by_date/
+  - bandit -r ./files_by_date/
