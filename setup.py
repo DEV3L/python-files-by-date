@@ -15,7 +15,8 @@ setup(
     install_requires=[
         'pytest==3.0.6',
         'coverage==4.3.4',
-        'bandit==1.4.0'
+        'bandit==1.4.0',
+        'pylint==1.6.5'
     ],
     classifiers=[
         'Environment :: Console',

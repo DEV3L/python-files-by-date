@@ -1,14 +1,32 @@
-# python-pictures-by-date
+# python-files-by-date
 
 A Python program that takes files within an input directory and copies them to an output directory into subdirectories in [YYYYMM] format based upon the file create date.
 
+Continuously deployed to PyPi via Snap-CI. 
+[https://pypi.python.org/pypi/files-by-date/](PyPi : files-by-date)
+
+
 ## Installation
 
-git clone git@github.com:DEV3L/python-files-by-date.git
+pip install files-by-date
+
 
 ## Usage
 
-This program takes an input directory and outputs the files contained within that directory into subdirectories in [YYYYMM] format based upon the file create date.
+`usage: files-by-date [-h] [-f FORCE_OVERWRITE] input_dir target_dir
+
+Files-By-Date v1.1: A Python program that takes files within an input
+directory and copies them to a target directory, sorted into [YYYYMM] format
+subdirectories based upon the file create date.
+
+positional arguments:
+  input_dir           input directory
+  target_dir          target output directory
+
+optional arguments:
+  -h, --help          show this help message and exit
+  -f FORCE_OVERWRITE  Force overwrite of files in target directory`
+
 
 ## Contributing
 
@@ -18,11 +36,6 @@ This program takes an input directory and outputs the files contained within tha
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## History
-
-* 0.1.0 - Initial setup 
-
-## Credits
 
 ## License
 
