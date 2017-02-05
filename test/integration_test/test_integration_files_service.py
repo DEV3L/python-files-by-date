@@ -4,7 +4,7 @@ import shutil
 from unittest import TestCase
 
 from files_by_date.service.files_service import FilesService, Count
-from files_by_date.test.integration_test import RESOURCES_INPUT_DIR
+from test.integration_test import RESOURCES_INPUT_DIR
 
 
 class TestIntegrationFilesService(TestCase):
@@ -26,7 +26,9 @@ class TestIntegrationFilesService(TestCase):
     def test_group_files_by_modified_date(self):
         files = FilesService.gather_files(RESOURCES_INPUT_DIR, list())
         grouped_files = FilesService.group_files_by_modified_date(files)
-        assert grouped_files == GROUPED_FILE_OUTPUT
+
+        if os.name != 'nt':  # file paths are picky on Windows
+            assert grouped_files == GROUPED_FILE_OUTPUT
 
     def test_copy_files(self):
         files = FilesService.gather_files(RESOURCES_INPUT_DIR, list())

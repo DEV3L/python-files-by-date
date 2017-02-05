@@ -14,7 +14,8 @@ setup(
     keywords=['dev3l', 'file management'],  # arbitrary keywords
     install_requires=[
         'pytest==3.0.6',
-        'coverage==4.3.4'
+        'coverage==4.3.4',
+        'bandit==1.4.0'
     ],
     classifiers=[
         'Environment :: Console',
