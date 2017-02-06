@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/DEV3L/python-files-by-date.png)](https://travis-ci.org/DEV3L/python-files-by-date)
 [![Coverage Status](https://coveralls.io/repos/github/DEV3L/python-files-by-date/badge.svg)](https://coveralls.io/github/DEV3L/python-files-by-date)
 ![PyPi](https://img.shields.io/pypi/v/files-by-date.svg)
+![PythonVersions](https://img.shields.io/pypi/pyversions/files-by-date.svg)
+
 
 # python-files-by-date
 
@@ -16,19 +18,21 @@ pip install files-by-date
 
 ## Usage
 
-`usage: files-by-date [-h] [-f FORCE_OVERWRITE] input_dir target_dir
-
+```
+usage: files-by-date [-h] [-f FORCE_OVERWRITE] input_dir target_dir
+ 
 Files-By-Date v1.1: A Python program that takes files within an input
 directory and copies them to a target directory, sorted into [YYYYMM] format
 subdirectories based upon the file create date.
-
+ 
 positional arguments:
   input_dir           input directory
   target_dir          target output directory
-
+ 
 optional arguments:
   -h, --help          show this help message and exit
-  -f FORCE_OVERWRITE  Force overwrite of files in target directory`
+  -f FORCE_OVERWRITE  Force overwrite of files in target directory
+```
 
 
 ## Contributing
