@@ -1,13 +1,13 @@
 [![Build Status](https://travis-ci.org/DEV3L/python-files-by-date.png)](https://travis-ci.org/DEV3L/python-files-by-date)
 [![Coverage Status](https://coveralls.io/repos/github/DEV3L/python-files-by-date/badge.svg)](https://coveralls.io/github/DEV3L/python-files-by-date)
+![PyPi](https://img.shields.io/pypi/v/files-by-date.svg)
 
 # python-files-by-date
 
 A Python program that takes files within an input directory and copies them to an output directory into subdirectories in [YYYYMM] format based upon the file create date.
 
 Continuously deployed to PyPi via Snap-CI. 
-[https://pypi.python.org/pypi/files-by-date/](PyPi : files-by-date)
-
+[PyPi : files-by-date](https://pypi.python.org/pypi/files-by-date/)
 
 ## Installation
 
